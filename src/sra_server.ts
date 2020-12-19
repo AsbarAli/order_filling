@@ -65,9 +65,9 @@ app.use(bodyParser.json());
  */
 app.get('/v3/orderbook', (req, res) => {
     console.log('HTTP: GET orderbook');
-    const baseAssetData = req.query.baseAssetData;
-    const quoteAssetData = req.query.quoteAssetData;
-    const chainIdRaw = req.query.chainId;
+    const baseAssetData: any = req.query.baseAssetData;
+    const quoteAssetData: any = req.query.quoteAssetData;
+    const chainIdRaw: any = req.query.chainId;
     // tslint:disable-next-line:custom-no-magic-numbers
     const chainId = parseInt(chainIdRaw, 10);
     if (chainId !== NETWORK_CONFIGS.chainId) {
@@ -84,7 +84,7 @@ app.get('/v3/orderbook', (req, res) => {
  */
 app.post('/v3/order_config', (req, res) => {
     console.log('HTTP: POST order config');
-    const chainIdRaw = req.query.chainId;
+    const chainIdRaw: any = req.query.chainId;
     // tslint:disable-next-line:custom-no-magic-numbers
     const chainId = parseInt(chainIdRaw, 10);
     if (chainId !== NETWORK_CONFIGS.chainId) {
@@ -106,7 +106,7 @@ app.post('/v3/order_config', (req, res) => {
  */
 app.post('/v3/order', (req, res) => {
     console.log('HTTP: POST order');
-    const chainIdRaw = req.query.chainId;
+    const chainIdRaw: any = req.query.chainId;
     // tslint:disable-next-line:custom-no-magic-numbers
     const chainId = parseInt(chainIdRaw, 10);
     if (chainId !== NETWORK_CONFIGS.chainId) {
